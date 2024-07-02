@@ -23,10 +23,11 @@ const Contact = () => {
     const { clientX, clientY } = event;
     const centerX = window.innerWidth / 2;
     const centerY = window.innerHeight / 2;
-    const x = (clientX - centerX) / 50; // Adjust the divisor to control the movement intensity
-    const y = (clientY - centerY) / 50;
+    const x = (clientX - centerX) / 150; // Adjust the divisor to control the movement intensity
+    const y = (clientY - centerY) / 150;
     setPosition({ x, y });
   };
+
 
     return (
       <>
@@ -83,7 +84,7 @@ const Contact = () => {
         src="./Keycap.png"
         alt=""
         style={{
-          transform: `translate3d(${position.x}px, ${position.y}px, 0) rotateX(${position.y}deg) rotateY(${position.x}deg)`,
+          transform: `translate3d(${-position.x * 8}px, ${-position.y * 8}px, 0) rotateX(${position.x}deg) rotateY(${position.y}deg)`,
         }}
       />
     </div>
